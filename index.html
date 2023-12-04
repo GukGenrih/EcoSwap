@@ -288,16 +288,16 @@
         const accords = Array.from(document.querySelectorAll(".accordion__item")); // считываем все элементы аккордеона в массив
 
         accords.forEach((accord) => {
-            accord.addEventListener("click", accHandler); // при нажатии на бокс вызываем ф-ию boxHanlder
+            accord.addEventListener("click", accHandler); // при нажатии на бокс вызываем ф-ию
         });
 
         function accHandler(e) {
             e.preventDefault(); // сбрасываем стандартное поведение
-            let currentBox = e.target.closest(".accordion__item"); // определяем текущий бокс
+            let currentBox = e.target.closest(".accordion__item"); // определяем текущий аккордион
             console.log(currentBox)
             let currentContent = currentBox.querySelector(".accordion__content"); // находим скрытый контент
             console.log(currentContent)
-            currentBox.classList.toggle("active"); // присваиваем ему активный класс
+            currentBox.classList.toggle("active"); // присваиваем аккордиону активный класс
             if (currentBox.classList.contains("active")) {
                 currentContent.style.maxHeight = "90px"; // исправлено на строку "90px"
             } else {
